@@ -17,12 +17,12 @@ public class GameMaster : MonoBehaviour {
     void Update () {
         nowTime += Time.deltaTime;
         if (boxNum <= 0) {
-            GameOver();
+            GameOver(nowTime.ToString("F0") + "秒でクリアできた！");
         }
     }
 
-    public void GameOver(string resultMessage) {   //<=====引数をもたせた
-        DataSender.resultMessage = resultMessage;  //<=====受け取った引数をstatic変数へ格納
+    public void GameOver(string resultMessage) {
+        DataSender.resultMessage = resultMessage;
         SceneManager.LoadScene("Result");
     }
 }
