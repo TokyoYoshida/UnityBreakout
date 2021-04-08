@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destoryer : MonoBehaviour
+public class KabeOut : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,8 @@ public class Destoryer : MonoBehaviour
     {
         
     }
-    
+
     private void OnCollisionEnter(Collision collision) {
-      Destroy(gameObject);
+        GameObject.Find("Master").GetComponent<GameMaster>().GameOver();
     }
 }
